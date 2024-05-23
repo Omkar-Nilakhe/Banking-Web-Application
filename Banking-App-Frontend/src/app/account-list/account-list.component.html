@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<table class="table table-striped">
+    <thead class="table table-dark">
+        <th>ID</th>
+        <th>AccountHolderName</th>
+        <th>Balance</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of accounts ">
+        <td>{{i.id}}</td>
+        <td>{{i.accountHolderName}}</td>
+        <td>{{i.balance}}</td>
+        <td (click)="deposit(i.id)" class="btn btn-success" style="margin: 10px;">Deposit</td>
+        <td (click)="withdraw(i.id)" class="btn btn-success" style="margin: 10px;">Withdraw</td>    
+        <td (click)="delete(i.id)" class="btn btn-danger" style="margin: 10px;">Delete</td>
+        <td (click)="view(i.id)" class="btn btn-info" style="margin: 10px;">View</td>
+    </tr>
+</tbody>
+</table>
+
